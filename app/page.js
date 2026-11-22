@@ -1,5 +1,6 @@
 import "./globals.css";
 
+// TECHNICAL SKILLS
 const skills = [
   { name: "HTML5", category: "Frontend" },
   { name: "CSS3", category: "Frontend" },
@@ -12,6 +13,7 @@ const skills = [
   { name: "Git & GitHub", category: "Tools" },
 ];
 
+// PROJECTS
 const projects = [
   {
     title: "Personal Portfolio",
@@ -40,7 +42,6 @@ const projects = [
 export default function Home() {
   return (
     <main>
-
       {/* NAVBAR */}
 
       <nav className="navbar">
@@ -64,41 +65,37 @@ export default function Home() {
             GitHub ↗
           </a>
 
-          <a href="/resume.pdf" target="_blank">
-            Resume ↗
+          {/* UPDATED RESUME LINK */}
+
+          <a
+            href="/Raj_Sawant_Resume.docx"
+            download="Raj_Sawant_Resume.docx"
+          >
+            Resume ↓
           </a>
         </div>
       </nav>
 
-
       {/* HERO SECTION */}
 
       <section id="home" className="hero">
-
         <div className="hero-content">
-
-          <p className="welcome">
-            ✦ WELCOME TO MY PORTFOLIO
-          </p>
+          <p className="welcome">✦ WELCOME TO MY PORTFOLIO</p>
 
           <h1>
             Hi, I'm <span>Raj Savant</span>
           </h1>
 
-          <h2>
-            Aspiring Full Stack Developer
-          </h2>
+          <h2>Aspiring Full Stack Developer</h2>
 
           <p className="description">
-            I am a passionate fresher interested in web
-            development and modern technologies. I enjoy
-            building responsive, user-friendly and modern
-            web applications using React, Next.js and
-            JavaScript.
+            I am a passionate fresher interested in web development
+            and modern technologies. I enjoy building responsive,
+            user-friendly and modern web applications using React,
+            Next.js and JavaScript.
           </p>
 
           <div className="buttons">
-
             <a href="#projects" className="btn">
               Explore My Work →
             </a>
@@ -107,18 +104,18 @@ export default function Home() {
               Contact Me
             </a>
 
+            {/* UPDATED DOWNLOAD CV BUTTON */}
+
             <a
-              href="/resume.pdf"
-              download="Raj_Savant_Resume.pdf"
+              href="/Raj_Sawant_Resume.docx"
+              download="Raj_Sawant_Resume.docx"
               className="btn"
             >
-              Download CV ↓
+              Download Updated CV ↓
             </a>
-
           </div>
 
           <div className="hero-info">
-
             <div>
               <h3>09+</h3>
               <p>Technical Skills</p>
@@ -133,53 +130,50 @@ export default function Home() {
               <h3>100%</h3>
               <p>Learning Attitude</p>
             </div>
-
           </div>
-
         </div>
-
       </section>
-
 
       {/* ABOUT SECTION */}
 
       <section id="about" className="section">
-
         <h2>
           About <span>Me</span>
         </h2>
 
         <div className="about-content card">
-
           <h3>Hello! I'm Raj Savant 👋</h3>
 
           <p>
             I am a fresher and an aspiring Full Stack Developer
             from Kolhapur, Maharashtra.
-
-            I am currently pursuing B.Com in Computer
-            Application and developing my technical skills
-            in web development.
-
-            I have learned HTML, CSS, JavaScript, React,
-            Next.js, Node.js and PostgreSQL.
-
-            I enjoy solving programming problems, learning
-            new technologies and creating practical projects.
-
+            <br />
+            <br />
+            I am currently pursuing B.Com in Computer Application
+            and developing my technical skills in web development.
+            <br />
+            <br />
+            I have learned HTML, CSS, JavaScript, React, Next.js,
+            Node.js and PostgreSQL.
+            <br />
+            <br />
+            I have completed Full Stack Web Development training
+            at Oktacon Softwares.
+            <br />
+            <br />
+            I enjoy solving programming problems, learning new
+            technologies and creating practical projects.
+            <br />
+            <br />
             My goal is to start my career in the IT industry
             and become a skilled software developer.
           </p>
-
         </div>
-
       </section>
-
 
       {/* SKILLS SECTION */}
 
       <section id="skills" className="section dark">
-
         <h2>
           My Technical <span>Skills</span>
         </h2>
@@ -190,47 +184,32 @@ export default function Home() {
         </p>
 
         <div className="grid">
-
           {skills.map((skill) => (
-
             <div className="card skill-card" key={skill.name}>
-
               <h3>{skill.name}</h3>
-
               <span>{skill.category}</span>
-
             </div>
-
           ))}
-
         </div>
-
       </section>
-
 
       {/* EDUCATION SECTION */}
 
       <section id="education" className="section">
-
         <h2>
           My <span>Education</span>
         </h2>
 
         <div className="education-timeline">
-
           <div className="card education-card">
-
             <span>Currently Pursuing</span>
 
             <h3>B.Com in Computer Application</h3>
 
             <p>Shivaji University, Kolhapur</p>
-
           </div>
 
-
           <div className="card education-card">
-
             <span>2020</span>
 
             <h3>Higher Secondary Certificate</h3>
@@ -238,12 +217,9 @@ export default function Home() {
             <p>Pune Board</p>
 
             <p>Percentage: 51.67%</p>
-
           </div>
 
-
           <div className="card education-card">
-
             <span>2018</span>
 
             <h3>Secondary School Certificate</h3>
@@ -251,24 +227,72 @@ export default function Home() {
             <p>Pune Board</p>
 
             <p>Percentage: 72.40%</p>
-
           </div>
-
         </div>
-
       </section>
 
+      {/* TRAINING SECTION */}
+
+      <section id="training" className="section dark">
+        <h2>
+          Professional <span>Training</span>
+        </h2>
+
+        <div className="card education-card">
+          <span>Full Stack Web Development</span>
+
+          <h3>Oktacon Softwares</h3>
+
+          <p>
+            Completed Full Stack Web Development training
+            covering frontend and backend technologies.
+          </p>
+
+          <br />
+
+          <p>
+            Learned HTML5, CSS3, JavaScript, React.js,
+            Next.js, Node.js and PostgreSQL.
+          </p>
+
+          <br />
+
+          <p>
+            Gained foundational knowledge of REST API
+            integration, database management and Git/GitHub.
+          </p>
+        </div>
+      </section>
+
+      {/* CERTIFICATIONS SECTION */}
+
+      <section id="certifications" className="section">
+        <h2>
+          My <span>Certifications</span>
+        </h2>
+
+        <div className="grid">
+          {[
+            "MS-CIT",
+            "C Programming",
+            "Java Programming",
+            "Android Programming (C++)",
+          ].map((certificate) => (
+            <div className="card skill-card" key={certificate}>
+              <h3>🏆 {certificate}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* CAREER OBJECTIVE */}
 
       <section id="objective" className="section dark">
-
         <h2>
           Career <span>Objective</span>
         </h2>
 
         <div className="card education-card">
-
           <h3>Aspiring Full Stack Developer</h3>
 
           <p>
@@ -292,16 +316,12 @@ export default function Home() {
             working with experienced developers and contributing
             to real-world projects.
           </p>
-
         </div>
-
       </section>
-
 
       {/* PROJECTS SECTION */}
 
       <section id="projects" className="section">
-
         <h2>
           My Latest <span>Projects</span>
         </h2>
@@ -312,29 +332,18 @@ export default function Home() {
         </p>
 
         <div className="grid">
-
           {projects.map((project) => (
-
             <div className="card project-card" key={project.title}>
-
-              <div className="project-icon">
-                💻
-              </div>
+              <div className="project-icon">💻</div>
 
               <h3>{project.title}</h3>
 
               <p>{project.description}</p>
 
               <div className="tech-stack">
-
                 {project.technologies.map((tech) => (
-
-                  <span key={tech}>
-                    {tech}
-                  </span>
-
+                  <span key={tech}>{tech}</span>
                 ))}
-
               </div>
 
               <a
@@ -344,20 +353,14 @@ export default function Home() {
               >
                 View Source Code ↗
               </a>
-
             </div>
-
           ))}
-
         </div>
-
       </section>
-
 
       {/* CONTACT SECTION */}
 
       <section id="contact" className="section dark">
-
         <h2>
           Get In <span>Touch</span>
         </h2>
@@ -368,7 +371,6 @@ export default function Home() {
         </p>
 
         <div className="contact-links">
-
           <a href="mailto:rajsavant8448@gmail.com">
             📧 Email Me
           </a>
@@ -384,42 +386,30 @@ export default function Home() {
           <a href="tel:+919075982006">
             📞 Call Me
           </a>
-
         </div>
 
         <div className="contact-details">
-
           <p>Email: rajsavant8448@gmail.com</p>
 
+          <p>Phone: +91 9075982006</p>
+
           <p>Location: Kolhapur, Maharashtra</p>
-
         </div>
-
       </section>
-
 
       {/* FOOTER */}
 
       <footer>
-
         <h3>
           Raj<span>.</span>
         </h3>
 
-        <p>
-          Designed and developed by Raj Savant
-        </p>
+        <p>Designed and developed by Raj Savant</p>
 
-        <p>
-          © 2026 All Rights Reserved.
-        </p>
+        <p>© 2026 All Rights Reserved.</p>
 
-        <p>
-          Built with Next.js, React and CSS.
-        </p>
-
+        <p>Built with Next.js, React and CSS.</p>
       </footer>
-
     </main>
   );
 }
