@@ -104,64 +104,82 @@ export default function Home() {
       {/* HERO SECTION */}
 
       <section id="home" className="hero">
-        <div className="hero-content">
 
-          <p className="welcome">
-            ✦ WELCOME TO MY PORTFOLIO
-          </p>
+        <div className="hero-container">
 
-          <h1>
-            Hi, I'm <span>Raj Savant</span>
-          </h1>
+          {/* PROFILE IMAGE */}
 
-          <h2>Aspiring Full Stack Developer</h2>
+          <div className="hero-image">
+            <img
+              src={`${basePath}/profile.jpg`}
+              alt="Raj Savant - Aspiring Full Stack Developer"
+            />
+          </div>
 
-          <p className="description">
-            I am a passionate fresher interested in web development
-            and modern technologies. I enjoy building responsive,
-            user-friendly and modern web applications using React,
-            Next.js and JavaScript.
-          </p>
+          {/* HERO CONTENT */}
 
-          <div className="buttons">
+          <div className="hero-content">
 
-            <a href="#projects" className="btn">
-              Explore My Work →
-            </a>
+            <p className="welcome">
+              ✦ WELCOME TO MY PORTFOLIO
+            </p>
 
-            <a href="#contact" className="btn outline">
-              Contact Me
-            </a>
+            <h1>
+              Hi, I'm <span>Raj Savant</span>
+            </h1>
 
-            <a
-              href={`${basePath}/Raj_Sawant_Resume.docx`}
-              download="Raj_Sawant_Resume.docx"
-              className="btn"
-            >
-              Download Updated CV ↓
-            </a>
+            <h2>Aspiring Full Stack Developer</h2>
+
+            <p className="description">
+              I am a passionate fresher interested in web development
+              and modern technologies. I enjoy building responsive,
+              user-friendly and modern web applications using React,
+              Next.js and JavaScript.
+            </p>
+
+            <div className="buttons">
+
+              <a href="#projects" className="btn">
+                Explore My Work →
+              </a>
+
+              <a href="#contact" className="btn outline">
+                Contact Me
+              </a>
+
+              <a
+                href={`${basePath}/Raj_Sawant_Resume.docx`}
+                download="Raj_Sawant_Resume.docx"
+                className="btn"
+              >
+                Download Updated CV ↓
+              </a>
+
+            </div>
+
+            <div className="hero-info">
+
+              <div>
+                <h3>09+</h3>
+                <p>Technical Skills</p>
+              </div>
+
+              <div>
+                <h3>03+</h3>
+                <p>Projects</p>
+              </div>
+
+              <div>
+                <h3>100%</h3>
+                <p>Learning Attitude</p>
+              </div>
+
+            </div>
 
           </div>
 
-          <div className="hero-info">
-
-            <div>
-              <h3>09+</h3>
-              <p>Technical Skills</p>
-            </div>
-
-            <div>
-              <h3>03+</h3>
-              <p>Projects</p>
-            </div>
-
-            <div>
-              <h3>100%</h3>
-              <p>Learning Attitude</p>
-            </div>
-
-          </div>
         </div>
+
       </section>
 
       {/* ABOUT SECTION */}
@@ -179,22 +197,27 @@ export default function Home() {
           <p>
             I am a fresher and an aspiring Full Stack Developer
             from Kolhapur, Maharashtra.
+
             <br /><br />
 
             I am currently pursuing B.Com in Computer Application
             and developing my technical skills in web development.
+
             <br /><br />
 
             I have learned HTML, CSS, JavaScript, React, Next.js,
             Node.js and PostgreSQL.
+
             <br /><br />
 
             I have completed Full Stack Web Development training
             at Oktacon Softwares.
+
             <br /><br />
 
             I enjoy solving programming problems, learning new
             technologies and creating practical projects.
+
             <br /><br />
 
             My goal is to start my career in the IT industry
