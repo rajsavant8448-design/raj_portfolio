@@ -1,11 +1,14 @@
-/** @type {import('next').NextConfig} */
+const basePath = process.env.GITHUB_ACTIONS
+  ? "/raj_portfolio"
+  : "";
 
 const nextConfig = {
   output: "export",
+  basePath,
 
-  basePath: process.env.GITHUB_ACTIONS
-    ? "/raj_portfolio"
-    : "",
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
 
   trailingSlash: true,
 

@@ -1,5 +1,8 @@
 import "./globals.css";
 
+// BASE PATH FOR GITHUB PAGES
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 // TECHNICAL SKILLS
 const skills = [
   { name: "HTML5", category: "Frontend" },
@@ -90,7 +93,7 @@ export default function Home() {
           </a>
 
           <a
-            href="/Raj_Sawant_Resume.docx"
+            href={`${basePath}/Raj_Sawant_Resume.docx`}
             download="Raj_Sawant_Resume.docx"
           >
             Resume ↓
@@ -131,7 +134,7 @@ export default function Home() {
             </a>
 
             <a
-              href="/Raj_Sawant_Resume.docx"
+              href={`${basePath}/Raj_Sawant_Resume.docx`}
               download="Raj_Sawant_Resume.docx"
               className="btn"
             >
@@ -327,7 +330,7 @@ export default function Home() {
               <br /><br />
 
               <a
-                href={certificate.file}
+                href={`${basePath}${certificate.file}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
