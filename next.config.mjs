@@ -5,15 +5,14 @@ const basePath = process.env.GITHUB_ACTIONS
 const nextConfig = {
   output: "export",
   basePath,
-
-  env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
-  },
-
   trailingSlash: true,
 
   images: {
     unoptimized: true,
+  },
+
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
   },
 };
 

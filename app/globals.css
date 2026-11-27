@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* =========================================
-   1. GLOBAL SETTINGS
-========================================= */
+/* GLOBAL SETTINGS */
 
 :root {
   --primary: #38bdf8;
@@ -24,7 +22,7 @@
 }
 
 html {
-  scroll-padding-top: 100px;
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -36,7 +34,7 @@ body {
 }
 
 a {
-  transition: 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
@@ -59,16 +57,14 @@ a {
   border-radius: 20px;
 }
 
-/* =========================================
-   2. NAVBAR
-========================================= */
+/* NAVBAR */
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 8%;
-  background: rgba(8, 14, 28, 0.92);
+  padding: 18px 7%;
+  background: rgba(8, 14, 28, 0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   position: sticky;
@@ -80,7 +76,6 @@ a {
 .logo {
   font-size: 30px;
   font-weight: 800;
-  letter-spacing: 1px;
   color: white;
   text-decoration: none;
 }
@@ -97,26 +92,14 @@ h2 span {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 22px;
-  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .nav-links a {
-  position: relative;
   color: var(--text);
   text-decoration: none;
   font-size: 13px;
   font-weight: 500;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -7px;
-  width: 0;
-  height: 2px;
-  background: var(--gradient);
   transition: 0.3s;
 }
 
@@ -124,60 +107,54 @@ h2 span {
   color: var(--primary);
 }
 
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* =========================================
-   3. HERO SECTION
-========================================= */
+/* HERO SECTION */
 
 .hero {
   min-height: 90vh;
   display: flex;
   align-items: center;
-  padding: 80px 12%;
+  padding: 70px 9%;
   background:
-    radial-gradient(
-      circle at 85% 20%,
-      rgba(56, 189, 248, 0.2),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at 10% 80%,
-      rgba(168, 85, 247, 0.15),
-      transparent 35%
-    ),
+    radial-gradient(circle at 85% 20%, rgba(56, 189, 248, 0.2), transparent 35%),
+    radial-gradient(circle at 10% 80%, rgba(168, 85, 247, 0.15), transparent 35%),
     var(--background);
-  position: relative;
-  overflow: hidden;
-  background-size: 200% 200%;
   animation: gradientMove 8s ease infinite;
 }
 
+.hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 55px;
+  width: 100%;
+  max-width: 1250px;
+  margin: auto;
+}
+
 .hero-content {
-  max-width: 850px;
+  flex: 1;
+  max-width: 750px;
   animation: heroEntry 1s ease;
 }
 
 .welcome {
   display: inline-block;
   color: var(--primary);
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   font-size: 13px;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
 .hero h1 {
-  font-size: clamp(38px, 6vw, 70px);
+  font-size: clamp(38px, 5vw, 65px);
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 20px;
 }
 
 .hero h2 {
-  font-size: clamp(22px, 3vw, 35px);
+  font-size: clamp(22px, 3vw, 32px);
   margin-bottom: 20px;
   color: #cbd5e1;
 }
@@ -185,94 +162,74 @@ h2 span {
 .description {
   color: var(--muted);
   max-width: 700px;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 2;
 }
 
-/* PROFILE PHOTO */
+/* PROFILE IMAGE */
+
+.hero-image {
+  flex: 0 0 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .profile-photo {
-  width: 280px;
-  height: 280px;
+  width: 300px;
+  height: 350px;
   object-fit: cover;
   object-position: center top;
-  border-radius: 50%;
-  border: 5px solid transparent;
-  background:
-    linear-gradient(var(--background), var(--background)) padding-box,
-    var(--gradient) border-box;
-  box-shadow: 0 0 35px rgba(56, 189, 248, 0.2);
+  border-radius: 25px;
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.25);
   transition: 0.4s ease;
 }
 
 .profile-photo:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 50px rgba(168, 85, 247, 0.35);
+  transform: scale(1.04);
+  box-shadow: 0 0 45px rgba(168, 85, 247, 0.4);
 }
 
-/* Optional two-column hero layout */
-
-.hero-layout {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 50px;
-  width: 100%;
-}
-
-.hero-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-/* =========================================
-   4. HERO STATISTICS
-========================================= */
+/* HERO STATISTICS */
 
 .hero-info {
   display: flex;
-  gap: 55px;
-  margin-top: 55px;
+  gap: 45px;
+  margin-top: 45px;
   flex-wrap: wrap;
 }
 
 .hero-info h3 {
   color: var(--primary);
-  font-size: 28px;
+  font-size: 27px;
 }
 
 .hero-info p {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 12px;
 }
 
-/* =========================================
-   5. BUTTONS
-========================================= */
+/* BUTTONS */
 
 .buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
-  margin-top: 35px;
+  gap: 15px;
+  margin-top: 30px;
 }
 
 .btn {
   display: inline-block;
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  padding: 13px 28px;
+  padding: 13px 24px;
   background: var(--gradient);
   color: white;
   border-radius: 8px;
   text-decoration: none;
+  font-size: 13px;
   font-weight: 600;
   border: 1px solid transparent;
   transition: 0.35s ease;
-  box-shadow: 0 5px 20px rgba(56, 189, 248, 0.15);
 }
 
 .btn:hover {
@@ -291,12 +248,10 @@ h2 span {
   color: #080e1c;
 }
 
-/* =========================================
-   6. COMMON SECTIONS
-========================================= */
+/* COMMON SECTIONS */
 
 .section {
-  padding: 100px 12%;
+  padding: 90px 9%;
   text-align: center;
   position: relative;
 }
@@ -304,7 +259,7 @@ h2 span {
 .section h2 {
   font-size: clamp(28px, 4vw, 42px);
   font-weight: 800;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .section > p {
@@ -318,20 +273,16 @@ h2 span {
   background: var(--surface);
 }
 
-/* =========================================
-   7. GRID
-========================================= */
+/* GRID */
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
-  margin-top: 45px;
+  margin-top: 40px;
 }
 
-/* =========================================
-   8. CARDS
-========================================= */
+/* CARDS */
 
 .card {
   position: relative;
@@ -339,37 +290,18 @@ h2 span {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 35px 28px;
+  padding: 30px 25px;
   backdrop-filter: blur(12px);
   transition: all 0.4s ease;
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 3px;
-  background: var(--gradient);
-  transition: 0.5s;
-}
-
-.card:hover::before {
-  left: 0;
-}
-
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
   border-color: var(--primary);
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.3),
-    0 0 20px rgba(56, 189, 248, 0.12);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* =========================================
-   9. ABOUT SECTION
-========================================= */
+/* ABOUT */
 
 .about-content {
   max-width: 850px;
@@ -380,7 +312,6 @@ h2 span {
 .about-content h3 {
   color: var(--primary);
   margin-bottom: 15px;
-  font-size: 23px;
 }
 
 .about-content p {
@@ -388,9 +319,7 @@ h2 span {
   line-height: 2;
 }
 
-/* =========================================
-   10. SKILLS SECTION
-========================================= */
+/* SKILLS */
 
 .skill-card {
   text-align: center;
@@ -398,7 +327,7 @@ h2 span {
 }
 
 .skill-card h3 {
-  font-size: 21px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -407,18 +336,7 @@ h2 span {
   font-size: 13px;
 }
 
-.skill-card:hover {
-  transform: translateY(-10px);
-  background: linear-gradient(
-    135deg,
-    rgba(56, 189, 248, 0.15),
-    rgba(168, 85, 247, 0.15)
-  );
-}
-
-/* =========================================
-   11. EDUCATION
-========================================= */
+/* EDUCATION */
 
 .education-timeline {
   max-width: 750px;
@@ -442,62 +360,38 @@ h2 span {
   margin: 10px 0;
 }
 
-.education-card p {
-  color: var(--muted);
-}
+/* CERTIFICATIONS */
 
-/* =========================================
-   12. CERTIFICATIONS
-========================================= */
-
-#certifications .skill-card {
+.certificate-card {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#certifications .skill-card h3 {
-  margin-bottom: 10px;
-}
-
-#certifications .skill-card p {
+.certificate-card p {
   color: var(--muted);
   margin-bottom: 8px;
 }
 
-#certifications .skill-card a {
+.certificate-link {
   display: inline-block;
-  padding: 9px 20px;
-  margin-top: 10px;
-  color: var(--primary);
+  margin-top: 20px;
+  padding: 10px 20px;
   border: 1px solid var(--primary);
-  border-radius: 7px;
+  border-radius: 8px;
+  color: var(--primary);
   text-decoration: none;
   font-size: 13px;
   font-weight: 600;
+  transition: 0.3s;
 }
 
-#certifications .skill-card a:hover {
-  color: white;
+.certificate-link:hover {
   background: var(--gradient);
-  border-color: transparent;
-  transform: translateY(-3px);
+  color: white;
 }
 
-/* =========================================
-   13. PROJECTS
-========================================= */
-
-.project-card {
-  text-align: left;
-}
-
-.project-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow:
-    0 0 15px rgba(56, 189, 248, 0.2),
-    0 0 35px rgba(168, 85, 247, 0.15);
-}
+/* PROJECTS */
 
 .project-icon {
   font-size: 35px;
@@ -537,72 +431,58 @@ h2 span {
   font-weight: 600;
 }
 
-.project-card a:hover {
-  color: var(--secondary);
-  letter-spacing: 1px;
-}
-
-/* =========================================
-   14. CONTACT
-========================================= */
+/* CONTACT */
 
 .contact-links {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
-  margin-top: 40px;
+  margin-top: 35px;
 }
 
 .contact-links a {
-  padding: 13px 28px;
+  padding: 12px 25px;
   color: var(--primary);
   border: 1px solid var(--primary);
   border-radius: 8px;
   text-decoration: none;
-  font-weight: 500;
+  transition: 0.3s;
 }
 
 .contact-links a:hover {
   background: var(--gradient);
   color: white;
-  border-color: transparent;
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.2);
 }
 
 .contact-details {
-  margin-top: 35px;
+  margin-top: 30px;
   color: var(--muted);
   line-height: 2;
 }
 
-/* =========================================
-   15. FOOTER
-========================================= */
+/* FOOTER */
 
 footer {
   text-align: center;
-  padding: 35px 15px;
+  padding: 30px 15px;
   background: #050a14;
   color: var(--muted);
   border-top: 1px solid var(--border);
-  font-size: 14px;
+  font-size: 13px;
 }
 
 footer h3 {
   font-size: 25px;
   margin-bottom: 10px;
-  color: white;
 }
 
 footer h3 span {
   color: var(--primary);
 }
 
-/* =========================================
-   16. ANIMATIONS
-========================================= */
+/* ANIMATIONS */
 
 @keyframes heroEntry {
   from {
@@ -630,130 +510,12 @@ footer h3 span {
   }
 }
 
-@keyframes sectionReveal {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
+/* TABLET VIEW */
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+@media (max-width: 992px) {
 
-/* =========================================
-   17. RESPONSIVE DESIGN
-========================================= */
-
-@media (max-width: 1100px) {
   .navbar {
-    padding: 18px 5%;
-  }
-
-  .nav-links {
-    gap: 14px;
-  }
-
-  .section {
-    padding: 80px 7%;
-  }
-
-  .hero {
-    padding: 70px 7%;
-  }
-}
-
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .hero-layout {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-
-  .hero-content {
-    max-width: 100%;
-  }
-
-  .description {
-    margin: auto;
-  }
-
-  .buttons,
-  .hero-info {
-    justify-content: center;
-  }
-
-  .hero-image {
-    margin-bottom: 25px;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 15px;
-    padding: 15px 5%;
-  }
-
-  .nav-links {
-    justify-content: center;
-    gap: 15px;
-  }
-
-  .hero {
-    min-height: 75vh;
-    padding: 65px 7%;
-  }
-
-  .hero h1 {
-    font-size: 40px;
-  }
-
-  .hero h2 {
-    font-size: 23px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .section {
-    padding: 65px 7%;
-  }
-
-  .buttons {
-    gap: 12px;
-  }
-
-  .hero-info {
-    gap: 25px;
-  }
-
-  .hero-info h3 {
-    font-size: 23px;
-  }
-
-  .about-content {
-    text-align: center;
-  }
-
-  .education-card {
-    text-align: center;
-  }
-
-  .profile-photo {
-    width: 230px;
-    height: 230px;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo {
-    font-size: 25px;
+    padding: 15px 4%;
   }
 
   .nav-links {
@@ -764,53 +526,208 @@ footer h3 span {
     font-size: 12px;
   }
 
+  .hero {
+    padding: 60px 6%;
+  }
+
+  .hero-layout {
+    gap: 30px;
+  }
+
+  .hero-image {
+    flex-basis: 260px;
+  }
+
+  .profile-photo {
+    width: 250px;
+    height: 300px;
+  }
+
+  .section {
+    padding: 75px 6%;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE VIEW */
+
+@media (max-width: 768px) {
+
+  html {
+    scroll-padding-top: 20px;
+  }
+
+  .navbar {
+    position: relative;
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px 10px;
+  }
+
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 50px 6%;
+    text-align: center;
+  }
+
+  .hero-layout {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero-image {
+    flex: none;
+    order: -1;
+  }
+
+  .profile-photo {
+    width: 220px;
+    height: 260px;
+    border-radius: 20px;
+  }
+
   .hero h1 {
-    font-size: 34px;
+    font-size: 36px;
   }
 
   .hero h2 {
-    font-size: 20px;
-  }
-
-  .welcome {
-    font-size: 11px;
-    letter-spacing: 2px;
+    font-size: 22px;
   }
 
   .description {
     font-size: 14px;
+    margin: auto;
   }
 
-  .btn {
-    padding: 12px 20px;
-    font-size: 13px;
+  .buttons {
+    justify-content: center;
   }
 
-  .card {
-    padding: 25px 20px;
+  .hero-info {
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .section {
+    padding: 60px 6%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .education-card {
+    text-align: center;
   }
 
   .contact-links {
     flex-direction: column;
+    align-items: stretch;
   }
 
-  .hero-info {
-    gap: 18px;
+}
+
+/* SMALL MOBILE VIEW */
+
+@media (max-width: 480px) {
+
+  .logo {
+    font-size: 25px;
   }
 
-  .hero-info h3 {
-    font-size: 21px;
+  .nav-links {
+    gap: 9px 12px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 40px 5%;
   }
 
   .profile-photo {
-    width: 190px;
-    height: 190px;
+    width: 180px;
+    height: 220px;
   }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero h2 {
+    font-size: 19px;
+  }
+
+  .welcome {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-info {
+    gap: 15px;
+  }
+
+  .hero-info h3 {
+    font-size: 20px;
+  }
+
+  .hero-info p {
+    font-size: 10px;
+  }
+
+  .section {
+    padding: 50px 5%;
+  }
+
+  .section h2 {
+    font-size: 27px;
+  }
+
+  .card {
+    padding: 23px 18px;
+  }
+
 }
 
-/* =========================================
-   18. ACCESSIBILITY
-========================================= */
+/* ACCESSIBILITY */
 
 a:focus-visible {
   outline: 2px solid var(--primary);
